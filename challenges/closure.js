@@ -17,8 +17,30 @@ function myFunction() {
 myFunction();
 
 // Explanation: 
-
-
+/*nestedFunction can access external because due to closure, it is able to look upwards and outwards, and in this case see the variable internal
+one level above it but still within its scope and access it.
+*/
 /* Task 2: Counter */
 
 /* Create a function called `sumation` that accepts a parameter and uses a counter to return the summation of that number. For example, `summation(4)` should return 10 because 1+2+3+4 is 10. */
+function sumation(x){
+  let counter = x;
+  if (x == 1){
+    return 1;
+  }
+  counter += sumation(x-1);
+  return counter;
+}
+console.log(sumation(4))
+
+function summation2(x){
+  function sumationHelper(x, counter){
+    while (x > 0){
+      counter += x;
+      x--;
+    }
+    return counter;
+  }
+  return sumationHelper(x, 0);
+}
+console.log(summation2(4));
