@@ -32,7 +32,9 @@ A higher order function takes another function as an argument and/or returns a f
 A feature where an inner function can look outwards and access other functions.
 4. Describe the four rules of the 'this' keyword.
 - Window/Global binding
-- Implicit binding - 
+- Implicit binding - when an object calls a function with . then the object is this
+- New binding - in the creation of a new object, the specific instance of the created object is this
+- Explicit binding - when we use call/apply, this is explicity bound
 5. Why do we need super() in an extended class?
 To inherit from the parent class
 ### Task 1 - Project Set up
